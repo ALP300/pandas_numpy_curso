@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: public
+    description: "Base de datos transaccional de ventas"
+    database: db_python_gyyb
+    schema: public
+    tables:
+      - name: clientes
+        description: "Información de clientes"
+        columns:
+          - name: id_cliente
+            description: "Primary key"
+            tests:
+              - unique
+              - not_null
+      
+      - name: empleados
+        description: "Información de empleados"
+      
+      - name: productos
+        description: "Catálogo de productos"
+      
+      - name: categorias
+        description: "Categorías de productos"
+      
+      - name: ventas
+        description: "Registro de ventas"
+        columns:
+          - name: id_venta
+            tests:
+              - unique
+              - not_null
+      
+      - name: detalle_venta
+        description: "Detalles de cada venta"
+      
+      - name: pagos
+        description: "Métodos y montos de pago"
